@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PACTO arquitectura — Estudio de diseño arquitectónico en Oaxaca, México. Diseñamos espacios construidos alrededor de cómo vives realmente.">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>PACTO arquitectura — Oaxaca, México</title>
+
+    <!--
+        Fuentes:
+        · Cormorant Garamond — serif editorial para titulares
+        · Figtree — sans-serif cálido y legible para cuerpo
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         SECCIÓN 1 — HERO
+         Imagen principal: /assets/hero-render.jpg
+         Render aspiracional — interior o exterior con luz natural
+         Formato recomendado: 1920×1080px o mayor, JPG optimizado
+         ============================================================ -->
+    <section class="hero" id="inicio" aria-label="Inicio">
+
+        <!-- Wordmark -->
+        <header class="hero-header">
+            <div class="logo" aria-label="PACTO arquitectura">
+                <span class="logo-name">PACTO</span>
+                <span class="logo-sub">arquitectura</span>
+            </div>
+        </header>
+
+        <!-- Fondo — reemplazar con imagen real -->
+        <!-- REPLACE: añadir background-image: url('/assets/hero-render.jpg') en .hero-image en styles.css -->
+        <div class="hero-image" role="img" aria-label="Render arquitectónico aspiracional de un proyecto PACTO"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <!-- Contenido central -->
+        <div class="hero-content">
+            <p class="hero-eyebrow">Diseño arquitectónico · Oaxaca, México</p>
+            <h1 class="hero-headline">
+                Diseña el espacio<br>
+                <em>en el que realmente</em><br>
+                quieres vivir.
+            </h1>
+            <p class="hero-body">
+                Trabajamos con personas que saben que el lugar donde viven
+                da forma a cómo viven — y que hacerlo bien vale la pena.
+            </p>
+            <div class="hero-ctas">
+                <a href="https://wa.me/529712659535"
+                   class="btn btn--primary"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Iniciar conversación en WhatsApp">
+                    Iniciar una conversación
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="mailto:pacto.arquitectura@gmail.com"
+                   class="btn btn--ghost"
+                   aria-label="Enviarnos un email">
+                    Escribirnos por email
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="hero-scroll" aria-hidden="true">
+            <span class="scroll-line"></span>
+        </div>
+
+        <!-- Línea decorativa inferior -->
+        <div class="hero-border" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 2 — REENCUADRE
+         Educación: qué es realmente la arquitectura
+         ============================================================ -->
+    <section class="reframe" id="que-hacemos" aria-label="Qué es el diseño arquitectónico">
+        <div class="container">
+            <div class="reframe-grid">
+
+                <div class="reframe-left">
+                    <span class="section-index" aria-hidden="true">01</span>
+                </div>
+
+                <div class="reframe-right">
+                    <blockquote class="pull-quote js-reveal">
+                        "La mayoría no sabe lo que hace
+                        un arquitecto. Ese es exactamente
+                        el punto de partida."
+                    </blockquote>
+
+                    <div class="reframe-body">
+                        <p class="js-reveal">
+                            Cuando la mayoría piensa en arquitectura, piensa en planos.
+                            Permisos. Documentos que se le entregan a un constructor.
+                        </p>
+                        <p class="js-reveal">
+                            Lo que es realmente: el pensamiento que ocurre
+                            <em>antes</em> de que se construya cualquier cosa.
+                        </p>
+                        <p class="js-reveal">
+                            Es la etapa donde se toman todas las decisiones — distribución,
+                            luz, flujo, proporción, cómo se conectan los espacios, cómo
+                            se siente un lugar a las 7am y a las 11pm. Si ese pensamiento
+                            no ocurre sobre papel, ocurre en la obra. A diez veces el costo.
+                        </p>
+                        <p class="js-reveal">
+                            El buen diseño no añade complejidad a tu proyecto. La elimina.
+                            Toma la nube de ideas, limitaciones y contradicciones que
+                            cargas — y las convierte en algo claro, funcional y real.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         VISUAL BREAK — Render de pausa editorial
+         REPLACE: añadir background-image: url('/assets/visual-break.jpg')
+         Render amplio, cinematográfico — sin texto, solo imagen
+         Formato recomendado: 2400×900px, horizontal
+         ============================================================ -->
+    <div class="visual-break js-reveal"
+         role="img"
+         aria-label="Vista arquitectónica de un espacio diseñado por PACTO">
+    </div>
+
+
+    <!-- ============================================================
+         SECCIÓN 3 — PROPUESTA DE VALOR
+         Cada metro cuadrado es una decisión
+         ============================================================ -->
+    <section class="value" id="valor" aria-label="Por qué importa el diseño">
+        <div class="container">
+
+            <div class="value-header">
+                <h2 class="section-headline js-reveal">
+                    Cada espacio es una serie<br>
+                    de decisiones.
+                </h2>
+                <p class="section-sub js-reveal">
+                    No solo qué construir — sino cómo debe sentirse vivir en él.
+                </p>
+            </div>
+
+            <div class="value-intro js-reveal">
+                <p class="value-lead">
+                    Tu hogar es donde comienzas y terminas cada día.
+                    Tu oficina es donde pasas un tercio de tu vida.
+                    Los espacios que habitas dan forma a cómo te sientes,
+                    cómo descansas, cómo piensas.
+                </p>
+                <p>
+                    La mayoría acepta espacios que están bien.
+                    Suficientemente funcionales. Más o menos lo que imaginaban.
+                    Nosotros trabajamos con personas que quieren más que eso.
+                </p>
+            </div>
+
+            <div class="value-points">
+                <!-- Punto 1 -->
+                <div class="value-point js-reveal">
+                    <!--
+                        REPLACE: añadir background-image: url('/assets/casa-og.jpg')
+                        en el elemento .value-image de este punto
+                        Render residencial — interior cálido, luz natural
+                    -->
+                    <div class="value-image value-image--1"
+                         role="img"
+                         aria-label="Proyecto residencial — familia con necesidad de flexibilidad">
+                    </div>
+                    <div class="value-caption">
+                        <span class="caption-tag">Residencial</span>
+                        <p>"Una familia que necesitaba flexibilidad construida en cada habitación."</p>
+                    </div>
+                </div>
+
+                <!-- Punto 2 -->
+                <div class="value-point js-reveal">
+                    <!--
+                        REPLACE: añadir background-image: url('/assets/complejo-am.jpg')
+                        Render estudio creativo — espacio compacto y bien resuelto
+                    -->
+                    <div class="value-image value-image--2"
+                         role="img"
+                         aria-label="Estudio creativo — espacio compacto y bien resuelto">
+                    </div>
+                    <div class="value-caption">
+                        <span class="caption-tag">Estudio</span>
+                        <p>"Un estudio creativo que necesitaba dejar de sentirse como oficina."</p>
+                    </div>
+                </div>
+
+                <!-- Punto 3 -->
+                <div class="value-point js-reveal">
+                    <!--
+                        REPLACE: añadir background-image: url('/assets/cluster-ho.jpg')
+                        Render proyecto familiar — conexión entre estructuras
+                    -->
+                    <div class="value-image value-image--3"
+                         role="img"
+                         aria-label="Proyecto familiar — tres generaciones, un lote">
+                    </div>
+                    <div class="value-caption">
+                        <span class="caption-tag">Familiar</span>
+                        <p>"Tres generaciones. Un lote. El reto no era el espacio — era la conexión."</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 4 — PROCESO COMO NARRATIVA
+         Cómo se ve trabajar con PACTO — historia, no checklist
+         ============================================================ -->
+    <section class="process" id="proceso" aria-label="Proceso de diseño">
+        <div class="container">
+
+            <div class="process-header">
+                <span class="section-index section-index--light js-reveal" aria-hidden="true">02</span>
+                <h2 class="section-headline section-headline--light js-reveal">
+                    Así se ve trabajar<br>con nosotros.
+                </h2>
+                <p class="section-sub section-sub--light js-reveal">
+                    No un checklist. Una colaboración.
+                </p>
+            </div>
+
+            <div class="process-steps">
+
+                <div class="process-step js-reveal">
+                    <div class="step-num" aria-hidden="true">01</div>
+                    <div class="step-body">
+                        <h3 class="step-title">Empieza con una conversación.</h3>
+                        <p>
+                            No con un formulario. No con un brief. Con una conversación real.
+                        </p>
+                        <p>
+                            Queremos entender cómo vives: qué te incomoda de los espacios
+                            en los que has estado, qué te atrae y por qué, cómo son tus
+                            días realmente. Hacemos preguntas que la mayoría no espera.
+                            Escuchamos más de lo que hablamos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-step js-reveal">
+                    <div class="step-num" aria-hidden="true">02</div>
+                    <div class="step-body">
+                        <h3 class="step-title">Luego pensamos. A fondo.</h3>
+                        <p>
+                            Antes de esbozar nada, nos sentamos con el problema — tus
+                            limitaciones, tus preferencias, tu estilo de vida, tu presupuesto —
+                            y encontramos la lógica que subyace a todo.
+                        </p>
+                        <p>
+                            Este es el trabajo invisible que cambia todo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-step js-reveal">
+                    <div class="step-num" aria-hidden="true">03</div>
+                    <div class="step-body">
+                        <h3 class="step-title">Reconocerás tu vida en el diseño.</h3>
+                        <p>
+                            Cuando presentamos conceptos, no te mostramos lo que nos parece
+                            bonito. Te mostramos soluciones a los problemas que describiste.
+                            Reconocerás tu vida en el diseño, aunque no siempre puedas
+                            explicar por qué.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-step js-reveal">
+                    <div class="step-num" aria-hidden="true">04</div>
+                    <div class="step-body">
+                        <h3 class="step-title">Refinamos juntos. Hasta que se sienta inevitable.</h3>
+                        <p>
+                            Nunca te entregamos un diseño terminado y te pedimos que lo apruebes.
+                            Trabajamos en rondas — cada una más precisa, cada una más específica —
+                            hasta que el diseño se sienta inevitable. Como si no pudiera haber
+                            sido de otra manera.
+                        </p>
+                        <p>
+                            Lo que recibes al final no son solo planos. Es una hoja de ruta
+                            completa y documentada — lista para ser construida por quien tú elijas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 5 — PORTAFOLIO
+         Proyectos que comenzaron como una conversación
+         ============================================================ -->
+    <section class="portfolio" id="proyectos" aria-label="Portafolio de proyectos">
+        <div class="container">
+
+            <div class="portfolio-header">
+                <span class="section-index js-reveal" aria-hidden="true">03</span>
+                <h2 class="section-headline js-reveal">
+                    Proyectos que comenzaron<br>como una conversación.
+                </h2>
+                <p class="section-sub js-reveal">
+                    No tenemos un estilo firma. Tenemos un proceso firma — uno que lleva
+                    a diseños que encajan con su cliente, su terreno y su vida.
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+
+                <!-- Proyecto 1 — Grande horizontal -->
+                <!--
+                    REPLACE: añadir background-image: url('/assets/casa-og.jpg')
+                    en .project-img del primer .project-card
+                    Render horizontal aspiracional — interior o exterior amplio
+                    Formato recomendado: 1400×900px
+                -->
+                <article class="project-card project-card--wide js-reveal">
+                    <div class="project-img project-img--1"
+                         role="img"
+                         aria-label="Casa OG — proyecto residencial PACTO arquitectura 2024">
+                        <div class="project-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-type">Residencial</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3 class="project-name">Casa OG</h3>
+                        <p class="project-caption">
+                            "Una pareja que regresaba de años en el extranjero y quería
+                            un hogar que se sintiera arraigado. Empezamos preguntando:
+                            ¿cómo se siente llegar a casa?"
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 — Vertical / tall -->
+                <!--
+                    REPLACE: añadir background-image: url('/assets/casa-ns.jpg')
+                    en .project-img del segundo .project-card
+                    Render vertical — fachada o espacio interior con altura
+                    Formato recomendado: 800×1200px
+                -->
+                <article class="project-card project-card--tall js-reveal">
+                    <div class="project-img project-img--2"
+                         role="img"
+                         aria-label="Casa NS — proyecto residencial PACTO arquitectura 2024">
+                        <div class="project-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-type">Residencial</span>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <h3 class="project-name">Casa NS</h3>
+                        <p class="project-caption">
+                            "Tres generaciones de una familia. Un lote. Dos estructuras.
+                            El reto no era el espacio — era la conexión."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 — Mediano -->
+                <!--
+                    REPLACE: añadir background-image: url('/assets/complejo-am.jpg')
+                    en .project-img del tercer .project-card
+                    Render comercial o estudio — espacio compacto y limpio
+                    Formato recomendado: 900×700px
+                -->
+                <article class="project-card js-reveal">
+                    <div class="project-img project-img--3"
+                         role="img"
+                         aria-label="Complejo AM — proyecto comercial PACTO arquitectura 2023">
+                        <div class="project-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-type">Comercial</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                        <h3 class="project-name">Complejo AM</h3>
+                        <p class="project-caption">
+                            "Un estudio que necesitaba contener enfoque, creatividad
+                            y reuniones — todo en 65m²."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Proyecto 4 — Mediano -->
+                <!--
+                    REPLACE: añadir background-image: url('/assets/cluster-ho.jpg')
+                    en .project-img del cuarto .project-card
+                    Render mixto — espacio exterior o patio interior
+                    Formato recomendado: 900×700px
+                -->
+                <article class="project-card js-reveal">
+                    <div class="project-img project-img--4"
+                         role="img"
+                         aria-label="Cluster HO — proyecto mixto PACTO arquitectura 2023">
+                        <div class="project-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-type">Mixto</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                        <h3 class="project-name">Cluster HO</h3>
+                        <p class="project-caption">
+                            "180m² que necesitaban sentirse el doble de generosos
+                            sin perder su escala humana."
+                        </p>
+                    </div>
+                </article>
+
+            </div><!-- /portfolio-grid -->
+
+            <div class="portfolio-cta js-reveal">
+                <p>Estos son algunos de nuestros proyectos.</p>
+                <a href="https://wa.me/529712659535"
+                   class="link-cta"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Cuéntanos sobre el tuyo&nbsp;&nbsp;→
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 6 — PARA QUIÉN ES PACTO
+         Calificación — quién encaja, quién probablemente no
+         ============================================================ -->
+    <section class="qualification" id="para-quien" aria-label="Para quién es PACTO">
+        <div class="container">
+
+            <div class="qual-header">
+                <span class="section-index js-reveal" aria-hidden="true">04</span>
+                <h2 class="section-headline js-reveal">
+                    PACTO no es para todos.<br>
+                    <em>Eso es intencional.</em>
+                </h2>
+            </div>
+
+            <div class="qual-grid">
+
+                <div class="qual-col qual-col--yes js-reveal">
+                    <h3 class="qual-title">
+                        <span class="qual-marker" aria-hidden="true">→</span>
+                        Es para ti si…
+                    </h3>
+                    <ul class="qual-list" aria-label="Para quién es PACTO">
+                        <li>Quieres que tu espacio refleje tu vida real, no una aproximación de ella</li>
+                        <li>Ves el diseño como una inversión en calidad de vida, no solo un costo</li>
+                        <li>Quieres entender el <em>por qué</em> detrás de cada decisión</li>
+                        <li>Estás construyendo o renovando algo que importa — y quieres hacerlo bien</li>
+                        <li>Valoras el proceso, la claridad y el pensamiento a largo plazo</li>
+                    </ul>
+                </div>
+
+                <div class="qual-col qual-col--no js-reveal">
+                    <h3 class="qual-title">
+                        <span class="qual-marker qual-marker--muted" aria-hidden="true">—</span>
+                        Probablemente no es el momento si…
+                    </h3>
+                    <ul class="qual-list qual-list--muted" aria-label="Para quién probablemente no es PACTO">
+                        <li>Necesitas el diseño terminado en tres semanas</li>
+                        <li>Ya tienes un diseño fijo y solo necesitas que alguien lo dibuje</li>
+                        <li>El presupuesto es el único criterio</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 7 — PREGUNTAS FRECUENTES
+         Objeciones tratadas con honestidad, no con ventas
+         ============================================================ -->
+    <section class="faq" id="preguntas" aria-label="Preguntas frecuentes">
+        <div class="container">
+
+            <div class="faq-header">
+                <h2 class="section-headline js-reveal">
+                    Algunas cosas que<br>la gente suele preguntarse.
+                </h2>
+            </div>
+
+            <div class="faq-list" role="list">
+
+                <div class="faq-item js-reveal" role="listitem">
+                    <button class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-1">
+                        <span>¿El diseño arquitectónico es caro?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-1" role="region">
+                        <div class="faq-answer-inner">
+                            <p>
+                                La respuesta honesta: sí, es una inversión. Pero esto es lo que
+                                en realidad cuesta más — construir algo sin pensarlo bien primero.
+                            </p>
+                            <p>
+                                Los cambios en papel no cuestan casi nada. Los cambios durante la
+                                construcción pueden costar entre 5 y 10 veces más. Un proyecto bien
+                                diseñado es más barato de construir, funciona mejor y conserva su
+                                valor por más tiempo.
+                            </p>
+                            <p>
+                                El costo del diseño es pequeño comparado con el costo de hacerlo mal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item js-reveal" role="listitem">
+                    <button class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-2">
+                        <span>¿Cuánto tiempo toma el proceso?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-2" role="region">
+                        <div class="faq-answer-inner">
+                            <p>
+                                Un proyecto arquitectónico completo toma entre 3 y 6 meses de trabajo
+                                de diseño, dependiendo de la complejidad.
+                            </p>
+                            <p>
+                                Puede parecer mucho tiempo. Pero esta es la etapa donde se decide todo.
+                                Apresurarlo no ahorra tiempo — lo toma prestado de la etapa de
+                                construcción, a un precio mucho más alto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item js-reveal" role="listitem">
+                    <button class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-3">
+                        <span>¿Qué pasa si todavía no sé bien qué quiero?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-3" role="region">
+                        <div class="faq-answer-inner">
+                            <p>
+                                Ese es un buen punto de partida. Los clientes que llegan con todo
+                                ya decidido a veces pierden sus mejores decisiones.
+                            </p>
+                            <p>
+                                Somos muy buenos ayudándote a encontrar claridad. Eso es una parte
+                                central de lo que hacemos — no un plus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item js-reveal" role="listitem">
+                    <button class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-4">
+                        <span>¿También supervisan la construcción?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-4" role="region">
+                        <div class="faq-answer-inner">
+                            <p>
+                                No. Nos enfocamos exclusivamente en diseño. Lo que entregamos al
+                                final es un proyecto completamente desarrollado y documentado —
+                                listo para ser construido por cualquier equipo de construcción calificado.
+                            </p>
+                            <p>
+                                Eso significa que tienes toda la documentación de diseño
+                                y la libertad de trabajar con quien mejor construya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /faq-list -->
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 8 — CTA FINAL
+         Cierre emocional — invitación a la primera conversación
+         ============================================================ -->
+    <section class="final-cta" id="contacto" aria-label="Contacto — iniciar conversación">
+        <!--
+            REPLACE (opcional): Imagen de fondo sutil con opacidad baja.
+            Agregar en styles.css dentro de .final-cta::before:
+            background-image: url('/assets/hero-render.jpg');
+            opacity: 0.06;
+        -->
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="container">
+            <div class="cta-inner js-reveal">
+                <p class="cta-eyebrow">El primer paso</p>
+                <h2 class="cta-headline">
+                    Tienes un proyecto en mente.<br>
+                    <em>Pensémoslo juntos.</em>
+                </h2>
+                <p class="cta-body">
+                    No necesitas tenerlo todo resuelto. Solo necesitas empezar.<br>
+                    Cuéntanos con qué estás trabajando — un terreno, un piso,
+                    una idea vaga — y nosotros tomaremos el camino desde ahí.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/529712659535"
+                       class="btn btn--accent"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Escribirnos por WhatsApp">
+                        Escribirnos por WhatsApp
+                        <span class="btn-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="mailto:pacto.arquitectura@gmail.com"
+                       class="btn btn--outline-light"
+                       aria-label="Enviarnos un email">
+                        Enviarnos un email
+                    </a>
+                </div>
+                <p class="cta-note">
+                    Respondemos en menos de 24 horas.
+                    Sin presión, sin compromisos —
+                    solo una conversación real sobre tu proyecto.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+         Minimal — contacto, redes, tagline
+         ============================================================ -->
+    <footer class="footer" id="footer" aria-label="Pie de página">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <div class="logo logo--footer" aria-label="PACTO arquitectura">
+                        <span class="logo-name">PACTO</span>
+                        <span class="logo-sub">arquitectura</span>
+                    </div>
+                    <p class="footer-location">Oaxaca de Juárez, México</p>
+                </div>
+
+                <nav class="footer-contact" aria-label="Contacto">
+                    <a href="https://wa.me/529712659535"
+                       class="footer-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        WhatsApp · +52 971 265 9535
+                    </a>
+                    <a href="mailto:pacto.arquitectura@gmail.com"
+                       class="footer-link">
+                        pacto.arquitectura@gmail.com
+                    </a>
+                </nav>
+
+                <nav class="footer-social" aria-label="Redes sociales">
+                    <a href="https://instagram.com/pacto.arquitectura"
+                       class="footer-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Instagram
+                    </a>
+                    <a href="https://facebook.com/PACTOarquitectura"
+                       class="footer-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Facebook
+                    </a>
+                </nav>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-tagline">Diseño que importa.</p>
+                <p class="footer-copy">© 2024 PACTO arquitectura</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
