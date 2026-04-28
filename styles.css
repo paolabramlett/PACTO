@@ -376,29 +376,10 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
   position: absolute;
   inset: 0;
   will-change: transform;
-  background-color: #221c18;
-  /*
-    ┌─────────────────────────────────────────────────────────────┐
-    │  REEMPLAZAR CON IMAGEN REAL                                 │
-    │  Descomentar la línea de abajo y ajustar la ruta:           │
-    │  background-image: url('/assets/hero-render.jpg');          │
-    │  background-size: cover;                                    │
-    │  background-position: center;                               │
-    └─────────────────────────────────────────────────────────────┘
-  */
-
-  /* Gradiente placeholder — aspecto de render al atardecer */
-  background: linear-gradient(
-    150deg,
-    #2a201a 0%,
-    #38271e 20%,
-    #4a3428 45%,
-    #3e2c22 65%,
-    #2c1e16 85%,
-    #1e1410 100%
-  );
-  background-size: cover;
-  background-position: center;
+  background-color: #221c1845;
+  background-image: url('./assets/hero-render.webp');          
+  background-size: cover;                                    
+  background-position: center;                               
 }
 
 /* Overlay degradado — legibilidad de texto */
@@ -407,10 +388,10 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(18, 14, 12, 0.18) 0%,
-    rgba(18, 14, 12, 0.28) 35%,
-    rgba(18, 14, 12, 0.58) 70%,
-    rgba(18, 14, 12, 0.78) 100%
+    rgba(18, 14, 12, 0.3) 0%,
+    rgba(18, 14, 12, 0.4) 35%,
+    rgba(18, 14, 12, 0.655) 70%,
+    rgba(18, 14, 12, 0.835) 100%
   );
   z-index: 2;
 }
@@ -431,7 +412,7 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
   font-weight: 400;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-line);
   margin-bottom: var(--sp-md);
   opacity: 0.9;
 }
@@ -597,27 +578,10 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 .visual-break {
   width: 100%;
   height: clamp(260px, 40vw, 560px);
-  background-color: #c4bdb5;
   background-size: cover;
   background-position: center;
-  /*
-    ┌─────────────────────────────────────────────────────────────┐
-    │  REEMPLAZAR CON IMAGEN REAL                                 │
-    │  background-image: url('/assets/visual-break.jpg');         │
-    │  Render amplio y horizontal — sin texto                     │
-    │  Formato recomendado: 2400×900px                            │
-    └─────────────────────────────────────────────────────────────┘
-  */
+  background-image: url('./assets/visual-break.jpg');  
 
-  /* Gradiente placeholder — tonos cálidos arquitectónicos */
-  background: linear-gradient(
-    105deg,
-    #cdc5bc 0%,
-    #c0b8b0 25%,
-    #b5ada5 55%,
-    #afa8a0 80%,
-    #a8a09a 100%
-  );
 }
 
 
@@ -684,18 +648,15 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 }
 
 .value-image--1 {
-  background: linear-gradient(140deg, #d0c8c0 0%, #c0b8b0 45%, #b4ada6 100%);
-  /*  REPLACE: background-image: url('/assets/casa-og.jpg'); */
+  background-image: url('./assets/casa-og.png'); 
 }
 
 .value-image--2 {
-  background: linear-gradient(140deg, #c8c0b8 0%, #b8b0a8 45%, #aca8a0 100%);
-  /*  REPLACE: background-image: url('/assets/complejo-am.jpg'); */
+  background-image: url('./assets/complejo-am.jpg'); 
 }
 
 .value-image--3 {
-  background: linear-gradient(140deg, #c4bcb4 0%, #b4aca4 45%, #a8a29c 100%);
-  /*  REPLACE: background-image: url('/assets/cluster-ho.jpg'); */
+  background-image: url('./assets/cluster-ho.jpg'); 
 }
 
 .value-caption {
@@ -903,27 +864,23 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 /* Alturas y gradientes placeholder por proyecto */
 .project-img--1 {
   aspect-ratio: 16 / 10;
-  background: linear-gradient(145deg, #ccc4bc 0%, #b8b0a8 40%, #aca8a2 100%);
-  /* REPLACE: background-image: url('/assets/casa-og.jpg'); */
+  background-image: url('./assets/casa-og-02.png'); 
 }
 
 .project-img--2 {
   height: 100%;
   min-height: 380px;
-  background: linear-gradient(155deg, #bfb8b0 0%, #b0a8a0 40%, #a49e98 100%);
-  /* REPLACE: background-image: url('/assets/casa-ns.jpg'); */
+  background-image: url('./assets/casa-ns.png'); 
 }
 
 .project-img--3 {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(130deg, #c8c0b8 0%, #bcb4ac 40%, #b0a8a2 100%);
-  /* REPLACE: background-image: url('/assets/complejo-am.jpg'); */
+  background-image: url('./assets/complejo-am-02.jpg'); 
 }
 
 .project-img--4 {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(130deg, #c4bcb4 0%, #b8b2aa 40%, #aeaaa4 100%);
-  /* REPLACE: background-image: url('/assets/cluster-ho.jpg'); */
+  background-image: url('./assets/cluste-ho-02.png'); 
 }
 
 /* Info debajo de cada imagen */
