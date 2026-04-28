@@ -179,39 +179,27 @@ button {
 
 
 /* ---------------------------------------------------------------
-   Wordmark / Logo
+   Logo imagen
    --------------------------------------------------------------- */
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.18rem;
-  line-height: 1;
+.logo-img {
+  display: block;
+  object-fit: contain;
 }
 
-.logo-name {
-  font-family: var(--f-serif);
-  font-size: 1.55rem;
-  font-weight: 600;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: #fff;
+.logo-img--header {
+  height: clamp(32px, 4vw, 48px);
+  width: auto;
 }
 
-.logo-sub {
-  font-family: var(--f-sans);
-  font-size: 0.52rem;
-  font-weight: 400;
-  letter-spacing: 0.52em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+.logo-img--footer {
+  height: clamp(28px, 3vw, 40px);
+  width: auto;
+  opacity: 0.8;
 }
 
-.logo--footer .logo-name {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.logo--footer .logo-sub {
-  color: rgba(255, 255, 255, 0.28);
+.logo-img--footer:hover {
+  opacity: 1;
+  transition: opacity var(--dur-fast) ease;
 }
 
 
@@ -870,7 +858,7 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 .project-img--2 {
   height: 100%;
   min-height: 380px;
-  background-image: url('./assets/casa-ns.png'); 
+  background-image: url('./assets/casa-ns-12.jpg'); 
 }
 
 .project-img--3 {
