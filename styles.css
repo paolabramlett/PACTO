@@ -568,7 +568,7 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
   height: clamp(260px, 40vw, 560px);
   background-size: cover;
   background-position: center;
-  background-image: url('./assets/visual-break.jpg');  
+  background-image: url('./assets/visual-break.webp');  
 
 }
 
@@ -636,15 +636,15 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 }
 
 .value-image--1 {
-  background-image: url('./assets/casa-og.png'); 
+  background-image: url('./assets/casa-og.webp'); 
 }
 
 .value-image--2 {
-  background-image: url('./assets/complejo-am.jpg'); 
+  background-image: url('./assets/complejo-am.webp'); 
 }
 
 .value-image--3 {
-  background-image: url('./assets/cluster-ho.jpg'); 
+  background-image: url('./assets/cluster-ho.webp'); 
 }
 
 .value-caption {
@@ -852,23 +852,23 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 /* Alturas y gradientes placeholder por proyecto */
 .project-img--1 {
   aspect-ratio: 16 / 10;
-  background-image: url('./assets/casa-og-02.png'); 
+  background-image: url('./assets/casa-og-02.webp'); 
 }
 
 .project-img--2 {
   height: 100%;
   min-height: 380px;
-  background-image: url('./assets/casa-ns-12.jpg'); 
+  background-image: url('./assets/casa-ns-12.webp'); 
 }
 
 .project-img--3 {
   aspect-ratio: 4 / 3;
-  background-image: url('./assets/complejo-am-02.jpg'); 
+  background-image: url('./assets/complejo-am-02.webp'); 
 }
 
 .project-img--4 {
   aspect-ratio: 4 / 3;
-  background-image: url('./assets/cluste-ho-02.png'); 
+  background-image: url('./assets/cluste-ho-02.webp'); 
 }
 
 /* Info debajo de cada imagen */
