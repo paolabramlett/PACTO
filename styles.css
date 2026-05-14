@@ -111,7 +111,8 @@ button {
   html { scroll-behavior: auto; }
 
   body[data-anim] .js-reveal,
-  body[data-anim] .pull-quote {
+  body[data-anim] .pull-quote,
+  body[data-anim] .process-step {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -300,6 +301,20 @@ body[data-anim] .js-reveal.visible {
 body[data-anim] .js-reveal:nth-child(2) { transition-delay: 0.08s; }
 body[data-anim] .js-reveal:nth-child(3) { transition-delay: 0.16s; }
 body[data-anim] .js-reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* Pasos del proceso — el JS los anima escalonados vía IntersectionObserver */
+body[data-anim] .process-step {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity  var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+body[data-anim] .process-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Pull-quote tiene su propia lógica */
 body[data-anim] .pull-quote {
@@ -833,85 +848,249 @@ body[data-anim] .pull-quote.visible {
   max-width: 660px;
 }
 
-/* Lista de pasos */
-.process-steps {
+/* ---------------------------------------------------------------
+   Grid 2×2 — los 4 pasos visibles en un pantallazo
+   --------------------------------------------------------------- */
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Cada celda */
+.process-step {
   display: flex;
   flex-direction: column;
-}
-
-.process-step {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: var(--sp-xl);
-  padding: var(--sp-xl) 0;
+  gap: var(--sp-sm);
+  padding: var(--sp-xl);
+  position: relative;
+  /* Divisor superior */
   border-top: 1px solid rgba(240, 237, 232, 0.09);
-  align-items: start;
 }
 
-.process-step:last-child {
-  border-bottom: 1px solid rgba(240, 237, 232, 0.09);
+/* Sin divisor superior en la primera fila */
+.process-step:nth-child(1),
+.process-step:nth-child(2) {
+  border-top: none;
 }
 
-/* Número grande decorativo */
+/* Divisor vertical entre columnas */
+.process-step:nth-child(odd) {
+  border-right: 1px solid rgba(240, 237, 232, 0.09);
+}
+
+/* Número de paso */
 .step-num {
   font-family: var(--f-serif);
-  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  font-size: var(--t-sm);
   font-weight: 300;
-  line-height: 0.85;
-  color: rgba(240, 237, 232, 0.07);
+  letter-spacing: 0.2em;
+  color: rgba(211, 115, 84, 0.55);
   user-select: none;
-  transition: color var(--dur-mid) var(--ease-out);
+  margin-bottom: var(--sp-xs);
 }
 
-.process-step:hover .step-num {
-  color: rgba(211, 115, 84, 0.12);
-}
-
-/* Contenido del paso */
-.step-body {
-  padding-top: 0.4rem;
-  max-width: 520px;
-}
-
+/* Título del paso */
 .step-title {
   font-family: var(--f-serif);
-  font-size: var(--t-xl);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.22;
   color: #F0EDE8;
-  margin-bottom: var(--sp-md);
-}
-
-.step-body p {
-  font-size: var(--t-base);
-  font-weight: 300;
-  line-height: 1.85;
-  color: rgba(240, 237, 232, 0.58);
   margin-bottom: var(--sp-sm);
 }
 
-.step-body p:last-child {
-  margin-bottom: 0;
+/* Contenido — párrafos y asides */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
-@media (max-width: 740px) {
-  .process-step {
-    grid-template-columns: 80px 1fr;
-    gap: var(--sp-md);
-  }
-  .step-num {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+.step-content p {
+  font-size: var(--t-sm);
+  font-weight: 300;
+  line-height: 1.82;
+  color: rgba(240, 237, 232, 0.55);
+}
+
+/* ---------------------------------------------------------------
+   Aside — preguntas inesperadas y ejemplos
+   --------------------------------------------------------------- */
+.step-aside {
+  display: block;
+  margin-top: var(--sp-sm);
+  padding: 0.75rem var(--sp-md);
+  border-left: 2px solid rgba(211, 115, 84, 0.45);
+  font-family: var(--f-serif);
+  font-size: var(--t-base);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(240, 237, 232, 0.7);
+}
+
+.aside-tag {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: var(--t-xs);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 0.35rem;
+}
+
+/* ---------------------------------------------------------------
+   Cycle badge — indicador de iteración entre pasos 03 y 04
+   --------------------------------------------------------------- */
+.process-step--04 {
+  position: relative;
+}
+
+.cycle-badge {
+  position: absolute;
+  top: 0;
+  /* Mobile: centrado en el borde superior */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(211, 115, 84, 0.35);
+  background: var(--c-dark-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-accent);
+  z-index: 2;
+  /* Transición sutil al hacer hover sobre el step 04 */
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background   var(--dur-fast) var(--ease-out);
+}
+
+.process-step--04:hover .cycle-badge {
+  border-color: rgba(211, 115, 84, 0.7);
+  background: rgba(211, 115, 84, 0.08);
+}
+
+/* Desktop: posicionar en la intersección de los 4 cuadrantes */
+@media (min-width: 900px) {
+  .cycle-badge {
+    left: 0;
   }
 }
 
-@media (max-width: 480px) {
+/* ---------------------------------------------------------------
+   Fórmula visual — paso 03
+   --------------------------------------------------------------- */
+.process-formula {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: var(--sp-sm);
+  padding: var(--sp-md);
+  border: 1px solid rgba(240, 237, 232, 0.08);
+  background: rgba(240, 237, 232, 0.02);
+}
+
+.formula-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.formula-who {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(211, 115, 84, 0.8);
+  flex-shrink: 0;
+  min-width: 4.2rem;
+}
+
+.formula-items {
+  font-size: var(--t-sm);
+  font-weight: 300;
+  color: rgba(240, 237, 232, 0.55);
+  line-height: 1.5;
+}
+
+.formula-operator {
+  font-family: var(--f-serif);
+  font-size: var(--t-md);
+  font-weight: 300;
+  color: rgba(211, 115, 84, 0.5);
+  line-height: 1;
+  padding-left: 0.1rem;
+}
+
+.formula-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(240, 237, 232, 0.12);
+  margin: 0.2rem 0;
+}
+
+.process-formula .formula-result {
+  font-family: var(--f-serif);
+  font-size: var(--t-base);
+  font-style: italic;
+  font-weight: 400;
+  color: #F0EDE8;
+  line-height: 1.42;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   Responsive — de grid 2×2 a columna única
+   --------------------------------------------------------------- */
+
+/* Tablet ancho — reducir padding */
+@media (max-width: 1024px) {
   .process-step {
+    padding: var(--sp-lg);
+  }
+}
+
+/* Tablet angosto — colapsar a columna única */
+@media (max-width: 680px) {
+  .process-grid {
     grid-template-columns: 1fr;
-    gap: var(--sp-sm);
   }
-  .step-num {
-    font-size: 3.5rem;
-    line-height: 1;
+
+  /* Resetear divisores de columna */
+  .process-step:nth-child(odd) {
+    border-right: none;
+  }
+
+  /* Restaurar divisor superior en todos menos el primero */
+  .process-step:nth-child(2) {
+    border-top: 1px solid rgba(240, 237, 232, 0.09);
+  }
+
+  /* Badge centrado horizontalmente entre 03 y 04 */
+  .cycle-badge {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .process-step {
+    padding: var(--sp-lg) var(--sp-md);
+  }
+}
+
+/* Móvil chico */
+@media (max-width: 400px) {
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  .step-aside {
+    padding: 0.65rem var(--sp-sm);
   }
 }
 

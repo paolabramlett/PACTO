@@ -82,29 +82,42 @@
 
 
   /* ---------------------------------------------------------------
-     Pasos del proceso — reveal escalonado
+     Pasos del proceso — reveal escalonado en cascada
+     Grid 2×2: aparecen casi al mismo tiempo, en diagonal
+     01 → 02 → 03 → 04 con 80ms de separación
      --------------------------------------------------------------- */
   const processSteps = document.querySelectorAll('.process-step');
 
   if (processSteps.length && !prefersReducedMotion) {
+    // Un solo observer para toda la sección — dispara cuando
+    // el grid entra en pantalla y anima todos los pasos en cascada
+    let gridFired = false;
+
     const stepObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = Array.from(processSteps).indexOf(entry.target);
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, idx * 100);
-            stepObserver.unobserve(entry.target);
+          if (entry.isIntersecting && !gridFired) {
+            gridFired = true;
+            processSteps.forEach((step, idx) => {
+              setTimeout(() => {
+                step.classList.add('visible');
+              }, idx * 90);
+            });
+            stepObserver.disconnect();
           }
         });
       },
       {
-        threshold: 0.12,
+        threshold: 0.08,
+        rootMargin: '0px 0px -60px 0px',
       }
     );
 
-    processSteps.forEach((step) => stepObserver.observe(step));
+    // Observar el primer paso como trigger del grid completo
+    if (processSteps[0]) stepObserver.observe(processSteps[0]);
+  } else {
+    // Sin animación: mostrar todo inmediatamente
+    processSteps.forEach((step) => step.classList.add('visible'));
   }
 
 
