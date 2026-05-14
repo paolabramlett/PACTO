@@ -33,7 +33,7 @@
   --t-2xl:  clamp(2rem,     3.8vw,  2.8rem);
   --t-3xl:  clamp(2.4rem,   4.8vw,  3.6rem);
   --t-4xl:  clamp(3rem,     6vw,    4.8rem);
-  --t-hero: clamp(3.4rem,   8vw,    6.8rem);
+  --t-hero: clamp(3.2rem,   7vw,    5.4rem);
 
   /* Espaciado */
   --sp-xs:  0.5rem;
