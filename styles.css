@@ -192,7 +192,7 @@ button {
 }
 
 .logo-img--footer {
-  height: clamp(28px, 3vw, 40px);
+  height: clamp(56px, 6vw, 80px);
   width: auto;
   opacity: 0.8;
 }
