@@ -1494,6 +1494,24 @@ body[data-anim] .pull-quote.visible {
   margin-bottom: 0;
 }
 
+.faq-answer-inner em {
+  font-style: italic;
+  color: var(--c-dark);
+}
+
+.faq-link {
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(211, 115, 84, 0.35);
+  transition:
+    text-decoration-color var(--dur-fast) ease;
+}
+
+.faq-link:hover {
+  text-decoration-color: var(--c-accent);
+}
+
 
 /* ================================================================
    FINAL CTA
