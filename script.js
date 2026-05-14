@@ -26,7 +26,7 @@
      IntersectionObserver — reveal general (.js-reveal)
      --------------------------------------------------------------- */
   const revealTargets = document.querySelectorAll(
-    '.js-reveal, .pull-quote, .reframe-body p'
+    '.js-reveal, .pull-quote'
   );
 
   if (revealTargets.length && !prefersReducedMotion) {

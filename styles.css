@@ -111,8 +111,7 @@ button {
   html { scroll-behavior: auto; }
 
   body[data-anim] .js-reveal,
-  body[data-anim] .pull-quote,
-  body[data-anim] .reframe-body p {
+  body[data-anim] .pull-quote {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -315,24 +314,6 @@ body[data-anim] .pull-quote.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Párrafos individuales del reframe */
-body[data-anim] .reframe-body p {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity  var(--dur-slow) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
-}
-
-body[data-anim] .reframe-body p.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-body[data-anim] .reframe-body p:nth-child(2) { transition-delay: 0.1s; }
-body[data-anim] .reframe-body p:nth-child(3) { transition-delay: 0.2s; }
-body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
 
 
 /* ================================================================
@@ -550,6 +531,166 @@ body[data-anim] .reframe-body p:nth-child(4) { transition-delay: 0.3s; }
   color: var(--c-accent);
   font-style: normal;
   font-weight: 500;
+}
+
+/* ---------------------------------------------------------------
+   Reframe — checklists (¿Qué necesito saber? / ¿Qué logramos?)
+   --------------------------------------------------------------- */
+.reframe-checklists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-lg);
+  margin-top: var(--sp-xl);
+  padding-top: var(--sp-xl);
+  border-top: 1px solid var(--c-line);
+}
+
+.reframe-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.checklist-title {
+  font-family: var(--f-sans);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-mid);
+}
+
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checklist-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: var(--t-base);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--c-dark);
+}
+
+/* Marcador de cada ítem — línea de pregunta */
+.checklist-list li::before {
+  content: '—';
+  flex-shrink: 0;
+  font-size: var(--t-sm);
+  color: var(--c-mid);
+  margin-top: 0.18em;
+}
+
+/* Marcador de ítems de resultado — acento */
+.checklist-list--results li::before {
+  content: '→';
+  color: var(--c-accent);
+}
+
+@media (max-width: 600px) {
+  .reframe-checklists {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xl);
+  }
+}
+
+/* ---------------------------------------------------------------
+   Reframe — casos reales
+   --------------------------------------------------------------- */
+.reframe-cases {
+  margin-top: var(--sp-xl);
+  padding-top: var(--sp-xl);
+  border-top: 1px solid var(--c-line);
+}
+
+.reframe-cases-label {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-mid);
+  margin-bottom: var(--sp-md);
+}
+
+.case-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-lg);
+  align-items: center;
+  background: var(--c-surface);
+  overflow: hidden;
+}
+
+.case-img {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--c-line);
+  /* Gradiente placeholder hasta añadir imagen real */
+  background-image: linear-gradient(
+    135deg,
+    #e8e3dc 0%,
+    #d4cdc4 60%,
+    #c8bfb4 100%
+  );
+  transition: transform 0.85s var(--ease-out);
+}
+
+.case-card:hover .case-img {
+  transform: scale(1.03);
+}
+
+/* REPLACE: background-image real para Casa ZF */
+/* .case-img--zf { background-image: url('./assets/casa-zf.jpg'); } */
+
+.case-body {
+  padding: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.case-tag {
+  display: block;
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.case-result {
+  font-size: var(--t-base);
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--c-dark);
+}
+
+.case-quote {
+  font-family: var(--f-serif);
+  font-size: var(--t-lg);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.32;
+  color: var(--c-dark);
+  padding-left: var(--sp-md);
+  border-left: 2px solid var(--c-accent);
+  margin-top: var(--sp-xs);
+}
+
+@media (max-width: 640px) {
+  .case-card {
+    grid-template-columns: 1fr;
+  }
+
+  .case-body {
+    padding: var(--sp-md);
+  }
 }
 
 @media (max-width: 720px) {
